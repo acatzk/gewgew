@@ -3,12 +3,20 @@ module.exports = {
     './public/**/*.html',
     './src/**/*.{js,jsx,ts,tsx,vue}',
   ],
-  darkMode: false, // or 'media' or 'class'
+  darkMode: 'media', // or 'media' or 'class'
   theme: {
-    extend: {},
+    body: ['Nunito', 'system-ui', 'sans-serif'],
+    extend: {
+      colors: {
+        'blue-google': '#4285f4'
+      }
+    }
   },
   variants: {
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/forms'),
+    require('@tailwindcss/line-clamp')
+  ],
 }
