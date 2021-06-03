@@ -1,9 +1,11 @@
-@import url("https://fonts.googleapis.com/css?family=Poppins:100,200,300,400,500,600,700,800,900&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-body {
-  font-family: "Poppins", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
-    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+@layer utilities {
+  .btn-login {
+    @apply border flex items-center justify-center space-x-4 w-full rounded-full py-3 px-8
+          focus:outline-none focus:ring-4 ring-offset-4 focus:ring-indigo-600 focus:ring-opacity-50 
+          transition ease-in-out duration-200;
+  }
 }
