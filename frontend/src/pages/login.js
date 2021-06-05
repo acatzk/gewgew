@@ -12,7 +12,7 @@ export default function LoginAuth () {
             <img src="/svgs/together.svg" />
           </div>
           <div className="flex flex-col w-full max-w-sm space-y-4">
-            <h1 className="text-center text-xl font-bold">Log in with</h1>
+            <h1 className="text-center text-xl font-semibold">Log in with</h1>
             <div className="space-y-3">
               <button className="btn-login">
                 <img className="w-6 h-6" src="/svgs/social-icon/google.svg" />

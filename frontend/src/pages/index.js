@@ -4,7 +4,6 @@ import { useRouter } from 'next/router'
 import LoadingScreen from '~/components/LoadingScreen'
 
 export default function Home() {
-
   const router = useRouter()
   useEffect(() => {
     router.push('/login')
@@ -13,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Head>
-        <title>Social Network</title>
+        <title>Gewgew</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <LoadingScreen />

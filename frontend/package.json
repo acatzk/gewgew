@@ -1,19 +1,27 @@
 {
   "name": "gewgew",
+  "description": "Social Media Network build in Nextjs with Tailwind",
   "version": "0.1.0",
   "private": true,
+  "author": "Joshua Galit",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
+  "keywords": [
+    "nextjs",
+    "tailwind",
+    "tailwindcss",
+    "purgecss"
+  ],
   "dependencies": {
-    "@tailwindcss/forms": "^0.2.1",
+    "@tailwindcss/forms": "^0.3.3",
     "@tailwindcss/line-clamp": "^0.2.0",
-    "next": "10.0.9",
+    "next": "^10.2.3",
     "next-images": "^1.7.0",
-    "react": "17.0.1",
-    "react-dom": "17.0.1"
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
   },
   "devDependencies": {
     "autoprefixer": "^10.2.6",
