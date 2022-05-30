@@ -1,12 +1,16 @@
-import React from 'react'
 import Head from 'next/head'
 import Image from 'next/image'
 import type { NextPage } from 'next'
-import { classNames } from '~/utils/classNames'
+import React, { useState } from 'react'
 import { ImFacebook } from 'react-icons/im'
+import { classNames } from '~/utils/classNames'
 import { BsTwitter, BsInstagram } from 'react-icons/bs'
 
 const Index: NextPage = () => {
+  let [isLoginPage, setIsLoginPage] = useState(true)
+
+  const handleSwitchForm = () => setIsLoginPage((isLoginPage = !isLoginPage))
+
   return (
     <React.Fragment>
       <Head>
@@ -58,47 +62,129 @@ const Index: NextPage = () => {
               </div>
               <h1 className="font-bold text-2xl text-indigo-200">Gewgew</h1>
             </div>
-            <div className="py-6 space-x-2">
-              <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">
+            <div className="py-6 space-x-4">
+              <button
+                type="button"
+                className={classNames(
+                  'w-10 h-10 items-center justify-center inline-flex',
+                  'rounded-full font-bold text-lg border-2 border-white',
+                  'hover:bg-white hover:text-black transition ease-in-out',
+                  'duration-150'
+                )}
+              >
                 f
-              </span>
-              <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">
+              </button>
+              <button
+                type="button"
+                className={classNames(
+                  'w-10 h-10 items-center justify-center inline-flex',
+                  'rounded-full font-bold text-lg border-2 border-white',
+                  'hover:bg-white hover:text-black transition ease-in-out',
+                  'duration-150'
+                )}
+              >
                 G+
-              </span>
-              <span className="w-10 h-10 items-center justify-center inline-flex rounded-full font-bold text-lg border-2 border-white">
+              </button>
+              <button
+                type="button"
+                className={classNames(
+                  'w-10 h-10 items-center justify-center inline-flex',
+                  'rounded-full font-bold text-lg border-2 border-white',
+                  'hover:bg-white hover:text-black transition ease-in-out',
+                  'duration-150'
+                )}
+              >
                 in
-              </span>
+              </button>
             </div>
-            <p className="text-gray-100">or use email your account</p>
-            <form action="" className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
-              <div className="pb-2 pt-4">
-                <input
-                  type="email"
-                  name="email"
-                  id="email"
-                  placeholder="Email"
-                  className="block w-full p-4 text-lg rounded-sm bg-black"
-                />
+            <p className="text-gray-100">or use your email</p>
+            <form className="sm:w-2/3 w-full px-4 lg:px-0 mx-auto">
+              <div className="flex justify-center">
+                <div className="pb-2 pt-4 w-full px-4 lg:px-0">
+                  {!isLoginPage && (
+                    <div className="form-floating mb-3 w-full">
+                      <input
+                        type="text"
+                        className={classNames(
+                          'form-control px-3 py-1.5 font-normal text-text-white',
+                          'bg-clip-padding border border-solid border-gray-300',
+                          'transition  ease-in-out duration-300 m-0 block w-full p-4',
+                          'text-lg rounded-sm bg-black',
+                          'focus:border-indigo-600 focus:outline-none'
+                        )}
+                        placeholder="name@example.com"
+                      />
+                      <label htmlFor="floatingInput" className="text-white">
+                        Fullname
+                      </label>
+                    </div>
+                  )}
+                  <div className="form-floating mb-3 w-full">
+                    <input
+                      type="email"
+                      className={classNames(
+                        'form-control px-3 py-1.5 font-normal text-text-white',
+                        'bg-clip-padding border border-solid border-gray-300',
+                        'transition  ease-in-out duration-300 m-0 block w-full p-4',
+                        'text-lg rounded-sm bg-black',
+                        'focus:border-indigo-600 focus:outline-none'
+                      )}
+                      placeholder="name@example.com"
+                    />
+                    <label htmlFor="floatingInput" className="text-white">
+                      Email address
+                    </label>
+                  </div>
+                  <div className="form-floating mb-3 w-full">
+                    <input
+                      type="password"
+                      className={classNames(
+                        'form-control px-3 py-1.5 font-normal text-text-white',
+                        'bg-clip-padding border border-solid border-gray-300',
+                        'transition  ease-in-out duration-300 m-0 block w-full p-4',
+                        'text-lg rounded-sm bg-black',
+                        'focus:border-indigo-600 focus:outline-none'
+                      )}
+                      placeholder="name@example.com"
+                    />
+                    <label htmlFor="floatingInput" className="text-white">
+                      Password
+                    </label>
+                  </div>
+                </div>
               </div>
-              <div className="pb-2 pt-4">
-                <input
-                  className="block w-full p-4 text-lg rounded-sm bg-black"
-                  type="password"
-                  name="password"
-                  id="password"
-                  placeholder="Password"
-                />
-              </div>
-              <div className="text-right text-gray-400 hover:underline hover:text-gray-100">
-                <a href="#">Forgot your password?</a>
-              </div>
+              {isLoginPage && (
+                <div className="text-right text-gray-400">
+                  <a
+                    href="#"
+                    className="hover:underline hover:text-gray-100 px-4 lg:px-0"
+                  >
+                    Forgot your password?
+                  </a>
+                </div>
+              )}
               <div className="px-4 pb-2 pt-4">
-                <button className="uppercase block w-full p-4 text-lg rounded-full bg-indigo-500 hover:bg-indigo-600 focus:outline-none">
-                  sign in
+                <button
+                  type="submit"
+                  className={classNames(
+                    'uppercase block w-full p-4 text-lg rounded-full',
+                    'bg-indigo-500 hover:bg-indigo-600 focus:outline-none'
+                  )}
+                >
+                  {isLoginPage ? 'sign in' : 'sign up'}
                 </button>
+                <div className="mt-3 text-center text-gray-400 ">
+                  <button
+                    onClick={handleSwitchForm}
+                    className="text-sm hover:underline hover:text-gray-100"
+                  >
+                    {!isLoginPage
+                      ? 'Do you have an account?'
+                      : "You don't have an account?"}
+                  </button>
+                </div>
               </div>
-
-              <div className="p-4 text-center right-0 left-0 flex justify-center space-x-4 mt-16 lg:hidden ">
+              <div className="p-4 text-center right-0 left-0 flex justify-center space-x-4 mt-6 lg:hidden ">
                 <BsTwitter className="text-white w-6 h-6" />
                 <ImFacebook className="text-white w-6 h-6" />
                 <BsInstagram className="text-white w-6 h-6" />
