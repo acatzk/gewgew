@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "@apollo/client": "^3.6.5",
+    "@headlessui/react": "^1.6.4",
     "@nhost/nextjs": "^1.2.8",
     "@nhost/react": "^0.7.8",
     "@nhost/react-apollo": "^4.2.9",
@@ -17,9 +18,11 @@
     "next": "12.1.6",
     "nextjs-progressbar": "^0.0.14",
     "react": "18.1.0",
-    "react-dom": "18.1.0"
+    "react-dom": "18.1.0",
+    "tw-elements": "^1.0.0-alpha12"
   },
   "devDependencies": {
+    "@tailwindcss/forms": "^0.5.2",
     "@types/node": "17.0.36",
     "@types/react": "18.0.9",
     "@types/react-dom": "18.0.5",
