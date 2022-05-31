@@ -1,8 +1,9 @@
 import React from 'react'
 import { NextPage } from 'next'
+import { authProtected } from '~/utils/auth-protected'
 
 const Home: NextPage = () => {
-  return <div>Home</div>
+  return <div>This is Home Page</div>
 }
 
-export default Home
+export default authProtected(Home)

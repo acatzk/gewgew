@@ -3,6 +3,7 @@ import { useForm } from 'react-hook-form'
 import { ImFacebook } from 'react-icons/im'
 import { classNames } from '~/utils/classNames'
 import { BsTwitter, BsInstagram } from 'react-icons/bs'
+import { Spinner } from '~/utils/Icons'
 
 type Props = {
   isLoginPage: boolean
@@ -31,9 +32,11 @@ const SignInUpForm: React.FC<Props> = (props) => {
               <div className="form-floating w-full">
                 <input
                   type="text"
+                  disabled={isSubmitting}
                   className={classNames(
                     'form-control px-3 py-1.5 font-normal text-text-white bg-clip-padding',
                     'transition ease-in-out duration-300 m-0 block w-full p-4',
+                    'disabled:cursor-not-allowed disabled:opacity-50',
                     'text-lg rounded ocus:outline-none',
                     errors?.display_name
                       ? 'bg-red-500 focus:border-red-600 border border-solid border-red-300'
@@ -71,9 +74,11 @@ const SignInUpForm: React.FC<Props> = (props) => {
             <div className="form-floating w-full">
               <input
                 type="email"
+                disabled={isSubmitting}
                 className={classNames(
                   'form-control px-3 py-1.5 font-normal text-text-white bg-clip-padding',
                   'transition ease-in-out duration-300 m-0 block w-full p-4',
+                  'disabled:cursor-not-allowed disabled:opacity-50',
                   'text-lg rounded ocus:outline-none',
                   errors?.email
                     ? 'bg-red-500 focus:border-red-600 border border-solid border-red-300'
@@ -109,9 +114,11 @@ const SignInUpForm: React.FC<Props> = (props) => {
             <div className="form-floating w-full">
               <input
                 type="password"
+                disabled={isSubmitting}
                 className={classNames(
                   'form-control px-3 py-1.5 font-normal text-text-white bg-clip-padding',
                   'transition ease-in-out duration-300 m-0 block w-full p-4',
+                  'disabled:cursor-not-allowed disabled:opacity-50',
                   'text-lg rounded ocus:outline-none',
                   errors?.password
                     ? 'bg-red-500 focus:border-red-600 border border-solid border-red-300'
@@ -155,12 +162,24 @@ const SignInUpForm: React.FC<Props> = (props) => {
       <div className="px-4 pb-2 pt-4">
         <button
           type="submit"
+          disabled={isSubmitting}
           className={classNames(
             'uppercase block w-full p-4 text-lg rounded-full',
-            'bg-indigo-500 hover:bg-indigo-600 focus:outline-none'
+            'bg-indigo-500 hover:bg-indigo-600 focus:outline-none',
+            'disabled:cursor-not-allowed disabled:opacity-60 flex justify-center'
           )}
         >
-          {isLoginPage ? 'sign in' : 'sign up'}
+          {isLoginPage ? (
+            isSubmitting ? (
+              <Spinner className="w-7 h-7 text-white text-center" />
+            ) : (
+              'sign in'
+            )
+          ) : isSubmitting ? (
+            <Spinner className="w-7 h-7 text-white text-center" />
+          ) : (
+            'sign up'
+          )}
         </button>
         <div className="mt-3 text-center text-gray-400 ">
           <button

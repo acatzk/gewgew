@@ -1,20 +1,58 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 import React, { useState } from 'react'
+import { nhost } from '~/lib/nhost-client'
 import { ImFacebook } from 'react-icons/im'
+import { Slide, toast } from 'react-toastify'
 import { classNames } from '~/utils/classNames'
-import { BsTwitter, BsInstagram } from 'react-icons/bs'
 import SignInUpForm from '~/components/SignInUpForm'
+import { useAuthenticationStatus } from '@nhost/react'
+import { BsTwitter, BsInstagram } from 'react-icons/bs'
+import { Spinner } from '~/utils/Icons'
+
+type FormProps = {
+  email: string
+  password: string
+}
 
 const Index: NextPage = () => {
+  const router = useRouter()
   let [isLoginPage, setIsLoginPage] = useState(true)
+  const { isAuthenticated, isLoading } = useAuthenticationStatus()
 
   const handleSwitchForm = () => setIsLoginPage((isLoginPage = !isLoginPage))
 
-  const handleAuthSubmit = () => {
-    alert('Alert')
+  const handleAuthSubmit = async ({ email, password }: FormProps) => {
+    if (isLoginPage) {
+      const { session, error } = await nhost.auth.signIn({
+        email,
+        password,
+      })
+      if (session) {
+        toast.success('Successfully Login')
+        router.push('/home')
+      }
+      if (error) {
+        toast.error(`${error?.message}`)
+      }
+    } else {
+      alert('Sign up with email')
+    }
   }
+
+  React.useEffect(() => {
+    if (isAuthenticated) router.push('/dashboard')
+  }, [isAuthenticated])
+
+  if (isLoading)
+    return (
+      <div className="flex flex-col items-center justify-center min-h-screen">
+        <Spinner className="w-14 h-14" />
+        <p className="text-xs mt-1">Loading...</p>
+      </div>
+    )
 
   return (
     <React.Fragment>
