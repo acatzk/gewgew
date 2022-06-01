@@ -1,18 +1,19 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import type { NextPage } from 'next'
+import { Spinner } from '~/utils/Icons'
+import { toast } from 'react-toastify'
 import { useRouter } from 'next/router'
 import React, { useState } from 'react'
 import { nhost } from '~/lib/nhost-client'
 import { ImFacebook } from 'react-icons/im'
-import { Slide, toast } from 'react-toastify'
 import { classNames } from '~/utils/classNames'
 import SignInUpForm from '~/components/SignInUpForm'
 import { useAuthenticationStatus } from '@nhost/react'
 import { BsTwitter, BsInstagram } from 'react-icons/bs'
-import { Spinner } from '~/utils/Icons'
 
 type FormProps = {
+  display_name?: string
   email: string
   password: string
 }
@@ -24,33 +25,47 @@ const Index: NextPage = () => {
 
   const handleSwitchForm = () => setIsLoginPage((isLoginPage = !isLoginPage))
 
-  const handleAuthSubmit = async ({ email, password }: FormProps) => {
+  const handleAuthSubmit = async ({
+    display_name,
+    email,
+    password,
+  }: FormProps) => {
     if (isLoginPage) {
       const { session, error } = await nhost.auth.signIn({
         email,
         password,
       })
-      if (session) {
-        toast.success('Successfully Login')
-        router.push('/home')
-      }
-      if (error) {
-        toast.error(`${error?.message}`)
-      }
+      authToastResponse({ session, error })
     } else {
-      alert('Sign up with email')
+      const { session, error } = await nhost.auth.signUp({
+        email,
+        password,
+        options: {
+          displayName: display_name,
+        },
+      })
+      authToastResponse({ session, error })
+    }
+  }
+
+  function authToastResponse({ session, error }: any) {
+    if (session) {
+      toast.success('Successfully Login')
+      router.push('/home')
+    }
+    if (error) {
+      toast.error(`${error?.message}`)
     }
   }
 
   React.useEffect(() => {
-    if (isAuthenticated) router.push('/dashboard')
+    if (isAuthenticated) router.push('/home')
   }, [isAuthenticated])
 
   if (isLoading)
     return (
-      <div className="flex flex-col items-center justify-center min-h-screen">
-        <Spinner className="w-14 h-14" />
-        <p className="text-xs mt-1">Loading...</p>
+      <div className="flex items-center justify-center min-h-screen">
+        <Spinner className="w-8 md:w-10 h-8 md:h-10 text-indigo-600" />
       </div>
     )
 
@@ -59,7 +74,7 @@ const Index: NextPage = () => {
       <Head>
         <title>Gewgew {isLoginPage ? '| Login' : '| Sign up'}</title>
       </Head>
-      <section className="min-h-screen flex items-stretch text-white ">
+      <section className="min-h-screen flex items-stretch text-white">
         <div
           className={classNames(
             'lg:flex w-1/2 hidden bg-gray-500',

@@ -193,11 +193,6 @@ const SignInUpForm: React.FC<Props> = (props) => {
           </button>
         </div>
       </div>
-      <div className="p-4 text-center right-0 left-0 flex justify-center space-x-4 mt-6 lg:hidden ">
-        <BsTwitter className="text-white w-6 h-6" />
-        <ImFacebook className="text-white w-6 h-6" />
-        <BsInstagram className="text-white w-6 h-6" />
-      </div>
     </form>
   )
 }
