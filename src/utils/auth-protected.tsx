@@ -10,9 +10,8 @@ export const authProtected = (Comp: any) => {
 
     if (isLoading)
       return (
-        <div className="flex flex-col items-center justify-center min-h-screen">
-          <Spinner className="w-14 h-14 text-indigo-600" />
-          <p className="text-xs mt-1">Loading...</p>
+        <div className="flex items-center justify-center min-h-screen">
+          <Spinner className="w-8 md:w-10 h-8 md:h-10 text-indigo-600" />
         </div>
       )
 
