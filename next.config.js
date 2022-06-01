@@ -10,7 +10,9 @@ const nextConfig = {
   },
   images: {
     domains: [
-      'images.unsplash.com'
+      'images.unsplash.com',
+      's.gravatar.com',
+      'miro.medium.com'
     ]
   }
 }

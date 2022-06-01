@@ -10,15 +10,15 @@ type Props = {
 const Layout: React.FC<Props> = (props) => {
   const { metaHead } = props
   return (
-    <div className="antialiased bg-gray-800 text-white min-h-screen">
+    <div className="antialiased bg-[#18191a] text-[#e7e9ec] min-h-screen">
       <Head>
         <title>{metaHead} / Gewgew</title>
       </Head>
-      <div className="flex flex-row">
+      <div className="flex flex-row min-h-screen">
         <SideBar />
-        <div className="relative w-1/4 bg-blue-200 flex-grow hidden lg:block"></div>
-        <div className="relative w-1/2 bg-green-200 flex-grow lg:flex-none"></div>
-        <div className="relative w-1/4 bg-yellow-200 flex-grow hidden md:block"></div>
+        <div className="relative w-1/4 flex-grow hidden lg:block border-r border-gray-700"></div>
+        <div className="relative w-1/2 flex-grow lg:flex-none border-r border-gray-700"></div>
+        <div className="relative w-1/4   flex-grow hidden md:block"></div>
       </div>
     </div>
   )
