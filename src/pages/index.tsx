@@ -54,7 +54,6 @@ const Index: NextPage = () => {
         user: { displayName },
       } = session
       toast.success(`Good day ${displayName}!`)
-      router.push('/home')
     }
     if (error) {
       toast.error(`${error?.message}`)
