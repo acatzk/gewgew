@@ -1,8 +1,6 @@
 import React from 'react'
 import { useForm } from 'react-hook-form'
-import { ImFacebook } from 'react-icons/im'
 import { classNames } from '~/utils/classNames'
-import { BsTwitter, BsInstagram } from 'react-icons/bs'
 import { Spinner } from '~/utils/Icons'
 
 type Props = {

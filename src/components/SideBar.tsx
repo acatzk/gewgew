@@ -1,5 +1,5 @@
-import React, { Fragment } from 'react'
 import Image from 'next/image'
+import React, { Fragment } from 'react'
 import { FaSearch } from 'react-icons/fa'
 import { useUserData } from '@nhost/react'
 import { BsMessenger, BsCheck2 } from 'react-icons/bs'
