@@ -35,7 +35,7 @@ const Index: NextPage = () => {
         email,
         password,
       })
-      authToastResponse({ session, error })
+      authToastResponse(session, error)
     } else {
       const { session, error } = await nhost.auth.signUp({
         email,
@@ -44,13 +44,16 @@ const Index: NextPage = () => {
           displayName: display_name,
         },
       })
-      authToastResponse({ session, error })
+      authToastResponse(session, error)
     }
   }
 
-  function authToastResponse({ session, error }: any) {
+  function authToastResponse(session: any, error: any) {
     if (session) {
-      toast.success('Successfully Login')
+      const {
+        user: { displayName },
+      } = session
+      toast.success(`Good day ${displayName}!`)
       router.push('/home')
     }
     if (error) {
