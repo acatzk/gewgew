@@ -1,8 +1,8 @@
 import '~/styles/global.css'
 import type { AppProps } from 'next/app'
 import { nhost } from '~/lib/nhost-client'
-import { Slide, ToastContainer } from 'react-toastify'
 import { NhostNextProvider } from '@nhost/nextjs'
+import { Slide, ToastContainer } from 'react-toastify'
 import { NhostApolloProvider } from '@nhost/react-apollo'
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
