@@ -37,11 +37,7 @@ const Layout: React.FC<Props> = (props) => {
       </Head>
       <div className="flex flex-row min-h-screen">
         <SideBar actions={{ handleLogout }} />
-        <div className="relative w-1/4 flex-grow hidden lg:block border-r border-gray-700"></div>
-        <div className="relative w-1/2 flex-grow lg:flex-none border-r border-gray-700">
-          {children}
-        </div>
-        <div className="relative w-1/4   flex-grow hidden md:block"></div>
+        {children}
       </div>
     </div>
   )

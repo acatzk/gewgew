@@ -19,7 +19,7 @@ const SideBar: React.FC<Props> = (props) => {
   return (
     <aside className="bg-[#242526] border-r border-gray-700">
       <nav className="flex flex-col items-center justify-between flex-1 h-full">
-        <button className="mt-3 rounded-full overflow-hidden active:scale-95">
+        <button className="mt-4 rounded-full overflow-hidden active:scale-95">
           <div className="relative w-10 h-10">
             <Image
               src={
