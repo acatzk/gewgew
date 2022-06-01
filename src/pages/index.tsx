@@ -72,7 +72,7 @@ const Index: NextPage = () => {
   return (
     <React.Fragment>
       <Head>
-        <title>Gewgew {isLoginPage ? '| Login' : '| Sign up'}</title>
+        <title>{isLoginPage ? 'Login' : 'Sign up'} / Gewgew</title>
       </Head>
       <section className="min-h-screen flex items-stretch text-white">
         <div

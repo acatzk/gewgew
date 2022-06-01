@@ -2,11 +2,13 @@ import React from 'react'
 import { NextPage } from 'next'
 import { authProtected } from '~/utils/auth-protected'
 import { nhost } from '~/lib/nhost-client'
+import Layout from '~/layouts/Layout'
 
 const Home: NextPage = () => {
   const logout = async () => await nhost.auth.signOut()
+
   return (
-    <div>
+    <Layout metaHead="Home">
       This is Home Page{' '}
       <button
         type="button"
@@ -15,7 +17,7 @@ const Home: NextPage = () => {
       >
         Logout here
       </button>
-    </div>
+    </Layout>
   )
 }
 
