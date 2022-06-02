@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import Image from 'next/image'
 import { BiSearch } from 'react-icons/bi'
 import { MdVerified } from 'react-icons/md'
@@ -9,6 +9,8 @@ import {
   dummyAccounts,
   DummyAccountProps,
 } from '~/utils/object-items'
+import DialogBox from '~/components/DialogBox'
+import PostDialog from '~/components/PostDialog'
 
 type Props = {
   children: React.ReactNode
@@ -17,6 +19,11 @@ type Props = {
 
 const HomeLayout: React.FC<Props> = (props) => {
   const { children, className } = props
+  let [isOpen, setIsOpen] = useState(true)
+
+  const handleCloseModal = () => setIsOpen(false)
+  const handleOpenModal = () => setIsOpen(true)
+
   return (
     <React.Fragment>
       <section
@@ -35,6 +42,20 @@ const HomeLayout: React.FC<Props> = (props) => {
               ))}
             </ul>
           </nav>
+          <div className="mt-2">
+            <button
+              type="button"
+              onClick={handleOpenModal}
+              className={classNames(
+                'text-eft py-3 px-4 text-white bg-primary block w-full rounded-full',
+                'font-bold active:scale-95 transition ease-in-out duration-150',
+                'hover:bg-indigo-dark active:bg-indigo-darkest tracking-widest'
+              )}
+            >
+              GewPost
+            </button>
+            <PostDialog isOpen={isOpen} actions={{ handleCloseModal }} />
+          </div>
         </div>
         <div className="flex justify-center bottom-3 inset-x-0 absolute">
           <p className="text-xs text-gray-300">
@@ -54,7 +75,7 @@ const HomeLayout: React.FC<Props> = (props) => {
       </main>
       <section
         className={classNames(
-          'relative w-1/4 flex-grow hidden md:block overflow-y-auto min-h-screen',
+          'relative w-1/4 hidden md:block flex-grow overflow-y-auto min-h-screen',
           'scrollbar-thin scrollbar-thumb-gray-dark scrollbar-track-darkest',
           'scrollbar-thumb-rounded'
         )}
