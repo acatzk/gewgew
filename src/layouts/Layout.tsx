@@ -31,11 +31,11 @@ const Layout: React.FC<Props> = (props) => {
   const handleLogout = async () => await nhost.auth.signOut()
 
   return (
-    <div className="relative antialiased bg-[#18191a] text-[#e7e9ec] min-h-screen">
+    <div className="relative antialiased bg-darkest text-[#e7e9ec]">
       <Head>
         <title>{metaHead} / Gewgew</title>
       </Head>
-      <div className="flex flex-row min-h-screen overflow-hidden">
+      <div className="flex flex-row min-h-screen h-screen overflow-y-hidden">
         <SideBar actions={{ handleLogout }} />
         {children}
       </div>
