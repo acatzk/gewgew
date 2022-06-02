@@ -1,7 +1,7 @@
+import React from 'react'
+import { Spinner } from './Icons'
 import { useRouter } from 'next/router'
 import { useAuthenticationStatus } from '@nhost/nextjs'
-import { Spinner } from './Icons'
-import React from 'react'
 
 export const authProtected = (Comp: any) => {
   return function AuthProtected(props: any) {
