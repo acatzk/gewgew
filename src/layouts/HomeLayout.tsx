@@ -21,7 +21,7 @@ const HomeLayout: React.FC<Props> = (props) => {
     <React.Fragment>
       <section
         className={classNames(
-          'relative w-1/4 flex-grow hidden lg:block border-r',
+          'relative w-1/5 flex-grow hidden lg:block border-r',
           'border-black min-h-screen overflow-hidden'
         )}
       >

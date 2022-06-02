@@ -119,7 +119,8 @@ function MenuPopOver(props: any) {
             className={classNames(
               'rounded-full hover:bg-primary active:bg-indigo-dark p-1.5 sm:p-2',
               'transition ease-in-out duration-150 active:scale-95',
-              'focus:outline-none'
+              'focus:outline-none',
+              open ? 'bg-indigo-dark' : ''
             )}
           >
             <BiDotsHorizontalRounded className="w-8 h-8" />
@@ -133,7 +134,7 @@ function MenuPopOver(props: any) {
             leaveFrom="opacity-100 translate-y-0"
             leaveTo="opacity-0 translate-y-1"
           >
-            <Popover.Panel className="absolute -top-36 -left-28 sm:left-40 z-10 w-screen max-w-xs transform -translate-x-1/2">
+            <Popover.Panel className="absolute -top-48 sm:-top-36 -left-28 sm:left-40 z-10 w-screen max-w-xs transform -translate-x-1/2">
               <div className="absolute bg-darker w-5 h-5 -bottom-1 rotate-45 left-[283px] sm:left-4 shadow-md -z-10"></div>
               <div className="bg-darker overflow-hidden rounded-lg shadow-md ring-1 ring-white ring-opacity-5 z-20">
                 <div className="flex py-4 justify-between">
@@ -159,6 +160,17 @@ function MenuPopOver(props: any) {
                   </div>
                   <BsCheck2 className="w-6 h-6 text-primary mr-4" />
                 </div>
+                <button
+                  type="button"
+                  className={classNames(
+                    'block sm:hidden',
+                    'border-t border-gray-800 py-4 px-4 text-sm w-full text-left',
+                    'hover:bg-[#262729] transition ease-in-out duration-150',
+                    'active:bg-darkest'
+                  )}
+                >
+                  Profile
+                </button>
                 <button
                   type="button"
                   onClick={handleLogout}
