@@ -12,13 +12,19 @@ import {
 
 type Props = {
   children: React.ReactNode
+  className?: string
 }
 
 const HomeLayout: React.FC<Props> = (props) => {
-  const { children } = props
+  const { children, className } = props
   return (
     <React.Fragment>
-      <section className="relative w-1/4 flex-grow hidden lg:block border-r border-black min-h-screen overflow-hidden">
+      <section
+        className={classNames(
+          'relative w-1/4 flex-grow hidden lg:block border-r',
+          'border-black min-h-screen overflow-hidden'
+        )}
+      >
         <div className="flex flex-col px-3 py-5 overflow-y-aut">
           <h1 className="text-2xl font-bold px-2">Gewgew</h1>
           <nav className="mt-4 flex flex-col">
@@ -36,7 +42,14 @@ const HomeLayout: React.FC<Props> = (props) => {
           </p>
         </div>
       </section>
-      <main className="relative w-1/2 flex-grow lg:flex-none border-r border-black">
+      <main
+        className={classNames(
+          'relative w-full sm:w-1/2 flex-grow lg:flex-none md:border-r border-black overflow-y-auto',
+          'scrollbar-thin scrollbar-thumb-gray-dark scrollbar-track-darkest',
+          'scrollbar-thumb-rounded',
+          `${className}`
+        )}
+      >
         {children}
       </main>
       <section
@@ -65,7 +78,7 @@ const HomeLayout: React.FC<Props> = (props) => {
             />
           </div>
         </div>
-        <nav className="divide-y divide-gray-700 space-y-4">
+        <nav className="divide-y divide-gray-darker space-y-4">
           <div>
             <h1 className="text-xs text-gray-300 px-4 py-2">
               Suggested Accounts
