@@ -18,7 +18,7 @@ const HomeLayout: React.FC<Props> = (props) => {
   const { children } = props
   return (
     <React.Fragment>
-      <section className="relative w-1/4 flex-grow hidden lg:block border-r border-gray-700 min-h-screen overflow-hidden">
+      <section className="relative w-1/4 flex-grow hidden lg:block border-r border-black min-h-screen overflow-hidden">
         <div className="flex flex-col px-3 py-5 overflow-y-aut">
           <h1 className="text-2xl font-bold px-2">Gewgew</h1>
           <nav className="mt-4 flex flex-col">
@@ -36,21 +36,30 @@ const HomeLayout: React.FC<Props> = (props) => {
           </p>
         </div>
       </section>
-      <main className="relative w-1/2 flex-grow lg:flex-none border-r border-gray-700">
+      <main className="relative w-1/2 flex-grow lg:flex-none border-r border-black">
         {children}
       </main>
-      <section className="relative w-1/4 flex-grow hidden md:block min-h-screen overflow-y-hidden">
-        <div className="sticky top-0 bg-[#18191a] py-3 px-2">
+      <section
+        className={classNames(
+          'relative w-1/4 flex-grow hidden md:block overflow-y-auto min-h-screen',
+          'scrollbar-thin scrollbar-thumb-gray-dark scrollbar-track-darkest',
+          'scrollbar-thumb-rounded'
+        )}
+      >
+        <div className="sticky top-0 bg-darkest py-3 px-4 z-10 border-b border-black shadow">
           <div className="relative flex items-center">
-            <div className="absolute left-3">
+            <div className="absolute left-4">
               <BiSearch className="w-5 h-5 text-gray-400" />
             </div>
             <input
               type="text"
               className={classNames(
-                'py-2 px-2 block w-full rounded-full bg-[#3a3b3c] focus:outline-none',
-                'border-none pl-10 focus:ring-0 placeholder-gray-400',
-                'focus:placeholder-gray-300'
+                'transition ease-in-out duration-300 block w-full px-4 py-1.5',
+                'text-lg rounded-lg focus:outline-none focus:bg-black',
+                'focus:ring-inset hover:ring-2 ring-inset ring-gray-hover',
+                'disabled:cursor-not-allowed disabled:opacity-50 focus:ring-2',
+                'form-control pl-10 block w-full rounded-full bg-dark border-0',
+                'focus:ring-primary'
               )}
               placeholder="Search"
             />
@@ -62,10 +71,9 @@ const HomeLayout: React.FC<Props> = (props) => {
               Suggested Accounts
             </h1>
             <ul className="mt-1">
-              {dummyAccounts?.map(
-                (accounts, i) =>
-                  i <= 4 && <SuggestedAccountList key={i} {...accounts} />
-              )}
+              {dummyAccounts?.map((accounts, i) => (
+                <SuggestedAccountList key={i} {...accounts} />
+              ))}
             </ul>
           </div>
           <div className="py-3">
@@ -73,10 +81,9 @@ const HomeLayout: React.FC<Props> = (props) => {
               Following accounts
             </h1>
             <ul className="mt-1">
-              {dummyAccounts?.map(
-                (accounts, i) =>
-                  i <= 3 && <SuggestedAccountList key={i} {...accounts} />
-              )}
+              {dummyAccounts?.map((accounts, i) => (
+                <SuggestedAccountList key={i} {...accounts} />
+              ))}
             </ul>
           </div>
         </nav>

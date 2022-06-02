@@ -17,7 +17,7 @@ const SideBar: React.FC<Props> = (props) => {
   const { handleLogout } = props?.actions
 
   return (
-    <aside className="bg-[#242526] border-r border-gray-700">
+    <aside className="bg-darker border-r border-black">
       <nav className="flex flex-col items-center justify-between flex-1 h-full">
         <button className="mt-4 rounded-full overflow-hidden active:scale-95">
           <div className="relative w-10 h-10">
@@ -35,10 +35,10 @@ const SideBar: React.FC<Props> = (props) => {
         </button>
         <ul className="flex flex-col items-center space-y-2 mb-3">
           <li className="flex items-center">
-            <div className="w-1 h-9 bg-indigo-500 rounded-r"></div>
+            <div className="w-1 h-9 bg-primary rounded-r"></div>
             <button
               className={classNames(
-                'text-indigo-500 rounded-lg hover:bg-[#3a3b3c] p-3 mx-3',
+                'text-primary rounded-full hover:bg-[#3a3b3c] p-3 mx-3',
                 'transition ease-in-out duration-150 active:scale-95'
               )}
             >
@@ -49,7 +49,7 @@ const SideBar: React.FC<Props> = (props) => {
             <div className="w-1 h-8 bg-indigo-500 rounded-r bg-transparent"></div>
             <button
               className={classNames(
-                'text-[#e7e9ec] rounded-lg hover:bg-[#3a3b3c] p-4 mx-3',
+                'text-[#e7e9ec] rounded-full hover:bg-[#3a3b3c] p-4 mx-3',
                 'transition ease-in-out duration-150 active:scale-95'
               )}
             >
@@ -60,7 +60,7 @@ const SideBar: React.FC<Props> = (props) => {
             <div className="w-1 h-8 bg-indigo-500 rounded-r bg-transparent"></div>
             <button
               className={classNames(
-                'text-[#e7e9ec] rounded-lg hover:bg-[#3a3b3c] p-3.5 mx-3',
+                'text-[#e7e9ec] rounded-full hover:bg-[#3a3b3c] p-3.5 mx-3',
                 'transition ease-in-out duration-150 active:scale-95'
               )}
             >
@@ -71,7 +71,7 @@ const SideBar: React.FC<Props> = (props) => {
             <div className="w-1 h-8 bg-indigo-500 rounded-r bg-transparent"></div>
             <button
               className={classNames(
-                'text-[#e7e9ec] rounded-lg hover:bg-[#3a3b3c] p-3.5 mx-3',
+                'text-[#e7e9ec] rounded-full hover:bg-[#3a3b3c] p-3.5 mx-3',
                 'transition ease-in-out duration-150 active:scale-95'
               )}
             >
@@ -85,7 +85,7 @@ const SideBar: React.FC<Props> = (props) => {
               <>
                 <Popover.Button
                   className={classNames(
-                    'rounded-full hover:bg-indigo-500 p-2',
+                    'rounded-full hover:bg-primary active:bg-indigo-dark p-2',
                     'transition ease-in-out duration-150 active:scale-95',
                     'focus:outline-none'
                   )}
@@ -127,7 +127,7 @@ const SideBar: React.FC<Props> = (props) => {
                             </span>
                           </div>
                         </div>
-                        <BsCheck2 className="w-6 h-6 text-indigo-500 mr-4" />
+                        <BsCheck2 className="w-6 h-6 text-primary mr-4" />
                       </div>
                       <button
                         type="button"

@@ -32,13 +32,14 @@ const SignInUpForm: React.FC<Props> = (props) => {
                   type="text"
                   disabled={isSubmitting}
                   className={classNames(
-                    'form-control px-3 py-1.5 font-normal text-text-white bg-clip-padding',
-                    'transition ease-in-out duration-300 m-0 block w-full p-4',
-                    'disabled:cursor-not-allowed disabled:opacity-50',
-                    'text-lg rounded ocus:outline-none',
+                    'form-control px-3 py-1.5 font-normal bg-darker',
+                    'transition ease-in-out duration-300 block w-full p-4',
+                    'text-lg rounded-lg focus:outline-none focus:bg-black',
+                    'focus:ring-inset hover:ring-2 ring-inset ring-gray-hover',
+                    'disabled:cursor-not-allowed disabled:opacity-50 focus:ring-2',
                     errors?.display_name
-                      ? 'bg-red-500 focus:border-red-600 border border-solid border-red-300'
-                      : 'bg-black focus:border-indigo-600 border border-solid border-gray-300'
+                      ? 'focus:border-none border-red-500 focus:ring-red-500 hover:ring-red-500'
+                      : 'focus:ring-primary'
                   )}
                   {...register('display_name', {
                     required: true,
@@ -74,13 +75,14 @@ const SignInUpForm: React.FC<Props> = (props) => {
                 type="email"
                 disabled={isSubmitting}
                 className={classNames(
-                  'form-control px-3 py-1.5 font-normal text-text-white bg-clip-padding',
-                  'transition ease-in-out duration-300 m-0 block w-full p-4',
-                  'disabled:cursor-not-allowed disabled:opacity-50',
-                  'text-lg rounded ocus:outline-none',
+                  'form-control px-3 py-1.5 font-normal bg-darker',
+                  'transition ease-in-out duration-300 block w-full p-4',
+                  'text-lg rounded-lg focus:outline-none focus:bg-black',
+                  'focus:ring-inset hover:ring-2 ring-inset ring-gray-hover',
+                  'disabled:cursor-not-allowed disabled:opacity-50 focus:ring-2',
                   errors?.email
-                    ? 'bg-red-500 focus:border-red-600 border border-solid border-red-300'
-                    : 'bg-black focus:border-indigo-600 border border-solid border-gray-300'
+                    ? 'focus:border-none border-red-500 focus:ring-red-500 hover:ring-red-500'
+                    : 'focus:ring-primary'
                 )}
                 {...register('email', {
                   required: true,
@@ -114,13 +116,14 @@ const SignInUpForm: React.FC<Props> = (props) => {
                 type="password"
                 disabled={isSubmitting}
                 className={classNames(
-                  'form-control px-3 py-1.5 font-normal text-text-white bg-clip-padding',
-                  'transition ease-in-out duration-300 m-0 block w-full p-4',
-                  'disabled:cursor-not-allowed disabled:opacity-50',
-                  'text-lg rounded ocus:outline-none',
+                  'form-control px-3 py-1.5 font-normal bg-darker',
+                  'transition ease-in-out duration-300 block w-full p-4',
+                  'text-lg rounded-lg focus:outline-none focus:bg-black',
+                  'focus:ring-inset hover:ring-2 ring-inset ring-gray-hover',
+                  'disabled:cursor-not-allowed disabled:opacity-50 focus:ring-2',
                   errors?.password
-                    ? 'bg-red-500 focus:border-red-600 border border-solid border-red-300'
-                    : 'bg-black focus:border-indigo-600 border border-solid border-gray-300'
+                    ? 'focus:border-none border-red-500 focus:ring-red-500 hover:ring-red-500'
+                    : 'focus:ring-primary'
                 )}
                 {...register('password', {
                   required: true,
@@ -162,9 +165,12 @@ const SignInUpForm: React.FC<Props> = (props) => {
           type="submit"
           disabled={isSubmitting}
           className={classNames(
-            'uppercase block w-full p-4 text-lg rounded-full',
-            'bg-indigo-500 hover:bg-indigo-600 focus:outline-none',
-            'disabled:cursor-not-allowed disabled:opacity-60 flex justify-center'
+            'uppercase block w-full p-4 text-lg rounded-full bg-primary',
+            'hover:bg-indigo-dark active:bg-indigo-darkest',
+            'disabled:cursor-not-allowed disabled:opacity-60',
+            'flex justify-center focus:outline-none',
+            'transition ease-in-out duration-150',
+            'active:scale-95 tracking-wide font-semibold'
           )}
         >
           {isLoginPage ? (

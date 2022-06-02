@@ -66,7 +66,7 @@ const Index: NextPage = () => {
 
   if (isLoading)
     return (
-      <div className="flex items-center justify-center min-h-screen">
+      <div className="flex items-center justify-center min-h-screen bg-[#18191a]">
         <Spinner className="w-8 md:w-10 h-8 md:h-10 text-indigo-600" />
       </div>
     )
@@ -76,7 +76,7 @@ const Index: NextPage = () => {
       <Head>
         <title>{isLoginPage ? 'Login' : 'Sign up'} / Gewgew</title>
       </Head>
-      <section className="min-h-screen flex items-stretch text-white">
+      <section className="min-h-screen antialiased flex items-stretch text-white bg-darkest">
         <div
           className={classNames(
             'lg:flex w-1/2 hidden bg-gray-500',
@@ -84,7 +84,7 @@ const Index: NextPage = () => {
             'bg-[url(https://images.unsplash.com/photo-1577495508048-b635879837f1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=675&q=80)]'
           )}
         >
-          <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
+          <div className="absolute bg-darkest opacity-60 inset-0 z-0"></div>
           <div className="w-full px-24 z-10">
             <h1 className="text-5xl font-extrabold text-left tracking-wide">
               Keep it special
@@ -99,7 +99,7 @@ const Index: NextPage = () => {
             <BsInstagram className="text-white w-6 h-6" />
           </div>
         </div>
-        <div className="lg:w-1/2 bg-[#161616] w-full flex items-center justify-center text-center md:px-16 px-0 z-0">
+        <div className="lg:w-1/2 bg-darkest w-full flex items-center justify-center text-center md:px-16 px-0 z-0">
           <div
             className={classNames(
               'absolute lg:hidden z-10 inset-0 bg-gray-500',
@@ -109,9 +109,9 @@ const Index: NextPage = () => {
           >
             <div className="absolute bg-black opacity-60 inset-0 z-0"></div>
           </div>
-          <div className="w-full py-6 z-20">
-            <div className="flex justify-center flex-col items-center mb-3">
-              <div className="relative my-2 w-20 h-20">
+          <div className="w-full z-20">
+            <div className="flex justify-center flex-col items-center">
+              <div className="relative w-20 h-20">
                 <Image
                   src="/assets/icon.png"
                   className="bg-cover bg-no-repeat"
@@ -120,7 +120,6 @@ const Index: NextPage = () => {
                   quality={100}
                 />
               </div>
-              <h1 className="font-bold text-2xl text-indigo-200">Gewgew</h1>
             </div>
             <SocialAuthButtons />
             <p className="text-gray-100">or use your email</p>
