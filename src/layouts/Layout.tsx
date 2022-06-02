@@ -4,6 +4,7 @@ import SideBar from '~/components/SideBar'
 import { nhost } from '~/lib/nhost-client'
 import { getNhostSession } from '@nhost/nextjs'
 import { GetServerSidePropsContext } from 'next'
+import { classNames } from '~/utils/classNames'
 
 type Props = {
   metaHead?: string
@@ -35,7 +36,11 @@ const Layout: React.FC<Props> = (props) => {
       <Head>
         <title>{metaHead} / Gewgew</title>
       </Head>
-      <div className="flex flex-row min-h-screen h-screen overflow-y-hidden">
+      <div
+        className={classNames(
+          'inline-flex flex-col-reverse sm:flex-row min-h-screen h-screen overflow-y-hidden'
+        )}
+      >
         <SideBar actions={{ handleLogout }} />
         {children}
       </div>

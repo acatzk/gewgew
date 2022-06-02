@@ -7,7 +7,68 @@ import { authProtected } from '~/utils/auth-protected'
 const Home: NextPage = () => {
   return (
     <Layout metaHead="Home">
-      <HomeLayout>This is the home page showing</HomeLayout>
+      <HomeLayout className="p-10">
+        {' '}
+        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam incidunt
+        quidem impedit delectus nisi quasi eius odit ipsum recusandae rem sequi
+        iste, non alias porro officiis illo ad, quisquam sint! Lorem, ipsum
+        dolor sit amet consectetur adipisicing elit. Quam incidunt quidem
+        impedit delectus nisi quasi eius odit ipsum recusandae rem sequi iste,
+        non alias porro officiis illo ad, quisquam sint! Lorem, ipsum dolor sit
+        amet consectetur adipisicing elit. Quam incidunt quidem impedit delectus
+        nisi quasi eius odit ipsum recusandae rem sequi iste, non alias porro
+        officiis illo ad, quisquam sint! Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Quam incidunt quidem impedit delectus nisi quasi eius
+        odit ipsum recusandae rem sequi iste, non alias porro officiis illo ad,
+        quisquam sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Quam incidunt quidem impedit delectus nisi quasi eius odit ipsum
+        recusandae rem sequi iste, non alias porro officiis illo ad, quisquam
+        sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+        incidunt quidem impedit delectus nisi quasi eius odit ipsum recusandae
+        rem sequi iste, non alias porro officiis illo ad, quisquam sint! Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Quam incidunt quidem
+        impedit delectus nisi quasi eius odit ipsum recusandae rem sequi iste,
+        non alias porro officiis illo ad, quisquam sint! Lorem, ipsum dolor sit
+        amet consectetur adipisicing elit. Quam incidunt quidem impedit delectus
+        nisi quasi eius odit ipsum recusandae rem sequi iste, non alias porro
+        officiis illo ad, quisquam sint! Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Quam incidunt quidem impedit delectus nisi quasi eius
+        odit ipsum recusandae rem sequi iste, non alias porro officiis illo ad,
+        quisquam sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Quam incidunt quidem impedit delectus nisi quasi eius odit ipsum
+        recusandae rem sequi iste, non alias porro officiis illo ad, quisquam
+        sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+        incidunt quidem impedit delectus nisi quasi eius odit ipsum recusandae
+        rem sequi iste, non alias porro officiis illo ad, quisquam sint! Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Quam incidunt quidem
+        impedit delectus nisi quasi eius odit ipsum recusandae rem sequi iste,
+        non alias porro officiis illo ad, quisquam sint! Lorem, ipsum dolor sit
+        amet consectetur adipisicing elit. Quam incidunt quidem impedit delectus
+        nisi quasi eius odit ipsum recusandae rem sequi iste, non alias porro
+        officiis illo ad, quisquam sint! Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Quam incidunt quidem impedit delectus nisi quasi eius
+        odit ipsum recusandae rem sequi iste, non alias porro officiis illo ad,
+        quisquam sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Quam incidunt quidem impedit delectus nisi quasi eius odit ipsum
+        recusandae rem sequi iste, non alias porro officiis illo ad, quisquam
+        sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+        incidunt quidem impedit delectus nisi quasi eius odit ipsum recusandae
+        rem sequi iste, non alias porro officiis illo ad, quisquam sint! Lorem,
+        ipsum dolor sit amet consectetur adipisicing elit. Quam incidunt quidem
+        impedit delectus nisi quasi eius odit ipsum recusandae rem sequi iste,
+        non alias porro officiis illo ad, quisquam sint! Lorem, ipsum dolor sit
+        amet consectetur adipisicing elit. Quam incidunt quidem impedit delectus
+        nisi quasi eius odit ipsum recusandae rem sequi iste, non alias porro
+        officiis illo ad, quisquam sint! Lorem, ipsum dolor sit amet consectetur
+        adipisicing elit. Quam incidunt quidem impedit delectus nisi quasi eius
+        odit ipsum recusandae rem sequi iste, non alias porro officiis illo ad,
+        quisquam sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+        Quam incidunt quidem impedit delectus nisi quasi eius odit ipsum
+        recusandae rem sequi iste, non alias porro officiis illo ad, quisquam
+        sint! Lorem, ipsum dolor sit amet consectetur adipisicing elit. Quam
+        incidunt quidem impedit delectus nisi quasi eius odit ipsum recusandae
+        rem sequi iste, non alias porro officiis illo ad, quisquam sint!
+      </HomeLayout>
     </Layout>
   )
 }
