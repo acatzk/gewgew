@@ -11,6 +11,7 @@ import { classNames } from '~/utils/classNames'
 import SignInUpForm from '~/components/SignInUpForm'
 import { useAuthenticationStatus } from '@nhost/react'
 import { BsTwitter, BsInstagram } from 'react-icons/bs'
+import { SocialAuthButtons } from '~/components/SocialAuthButtons'
 
 type FormProps = {
   display_name?: string
@@ -131,46 +132,6 @@ const Index: NextPage = () => {
         </div>
       </section>
     </React.Fragment>
-  )
-}
-
-function SocialAuthButtons() {
-  return (
-    <div className="py-6 space-x-4">
-      <button
-        type="button"
-        className={classNames(
-          'w-10 h-10 items-center justify-center inline-flex',
-          'rounded-full font-bold text-lg border-2 border-white',
-          'hover:bg-white hover:text-black transition ease-in-out',
-          'duration-150'
-        )}
-      >
-        f
-      </button>
-      <button
-        type="button"
-        className={classNames(
-          'w-10 h-10 items-center justify-center inline-flex',
-          'rounded-full font-bold text-lg border-2 border-white',
-          'hover:bg-white hover:text-black transition ease-in-out',
-          'duration-150'
-        )}
-      >
-        G+
-      </button>
-      <button
-        type="button"
-        className={classNames(
-          'w-10 h-10 items-center justify-center inline-flex',
-          'rounded-full font-bold text-lg border-2 border-white',
-          'hover:bg-white hover:text-black transition ease-in-out',
-          'duration-150'
-        )}
-      >
-        in
-      </button>
-    </div>
   )
 }
 
