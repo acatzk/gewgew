@@ -2,7 +2,13 @@
 const nextConfig = {
   reactStrictMode: true,
   env: {
-    NEXT_PUBLIC_NHOST_BACKEND: process.env.NEXT_PUBLIC_NHOST_BACKEND
+    NEXT_PUBLIC_NHOST_BACKEND: process.env.NEXT_PUBLIC_NHOST_BACKEND,
+    FACEBOOK_ID: process.env.FACEBOOK_ID,
+    FACEBOOK_SECRET: process.env.FACEBOOK_SECRET,
+    GITHUB_ID: process.env.GITHUB_ID,
+    GITHUB_SECRET: process.env.GITHUB_SECRET,
+    GOOGLE_ID: process.env.GOOGLE_ID,
+    GOOGLE_SECRET: process.env.GOOGLE_SECRET,
   },
   webp: {
     preset: "default",
