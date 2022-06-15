@@ -38,7 +38,7 @@ const Layout: React.FC<Props> = (props) => {
       </Head>
       <div
         className={classNames(
-          'inline-flex flex-col-reverse sm:flex-row min-h-screen h-screen overflow-y-hidden'
+          'flex flex-col-reverse sm:flex-row min-h-screen h-screen overflow-y-hidden'
         )}
       >
         <SideBar actions={{ handleLogout }} />

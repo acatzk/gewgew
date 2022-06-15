@@ -65,9 +65,9 @@ const HomeLayout: React.FC<Props> = (props) => {
       </section>
       <main
         className={classNames(
-          'relative w-full sm:w-1/2 flex-grow lg:flex-none md:border-r border-black overflow-y-auto',
-          'scrollbar-thin scrollbar-thumb-gray-dark scrollbar-track-darkest',
-          'scrollbar-thumb-rounded',
+          'relative w-full sm:w-1/2 flex-grow lg:flex-none md:border-r border-black',
+          'scrollbar-thin scrollbar-thumb-gray-dark scrollbar-track-darkest scrollbar-thumb-rounded',
+          'snap-y snap-mandatory h-screen w-screen overflow-y-scroll scroll-smooth',
           `${className}`
         )}
       >
