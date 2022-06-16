@@ -21,7 +21,11 @@ const nextConfig = {
       'miro.medium.com',
       'encrypted-tbn0.gstatic.com',
       'p16-sign-va.tiktokcdn.com',
-      'p16-sign-sg.tiktokcdn.com'
+      'p16-sign-sg.tiktokcdn.com',
+      'cdn.pixabay.com',
+      'images.pexels.com',
+      'images.ctfassets.net',
+      'static.vecteezy.com'
     ]
   }
 }

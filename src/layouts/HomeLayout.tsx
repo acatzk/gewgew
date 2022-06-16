@@ -19,7 +19,7 @@ type Props = {
 
 const HomeLayout: React.FC<Props> = (props) => {
   const { children, className } = props
-  let [isOpen, setIsOpen] = useState(true)
+  let [isOpen, setIsOpen] = useState(false)
 
   const handleCloseModal = () => setIsOpen(false)
   const handleOpenModal = () => setIsOpen(true)
